@@ -27,4 +27,19 @@ console.log(typeof newB) //this will return NaN again
 let isLoggedIn = 1
 let newIsLoggedIn = Boolean(isLoggedIn)
 console.log(newIsLoggedIn) //indeed true is equal to 1
-//an empty string when converted to boolean will return false and when a string which has something will return true 
+//an empty string when converted to boolean will return false and when a string which has something will return true
+
+let str1 = "hi"
+let str2 = " name"
+let str3 = str1 + str2
+console.log(str3) //this is how we add 2 strings
+
+
+console.log(1 + 2 + "3") // now this gave 33 but
+console.log("2" + 1 + 3) //this gave a different result to fix this use () to specify which operation happens first
+//this happens because if the first entry is of type string every other thing would be converted to a string
+//but if the string is at the end of the log then first the operation that was defined would happen 
+
+
+//++i first increment then use
+//i++ first use then increment
