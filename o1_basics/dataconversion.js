@@ -43,3 +43,5 @@ console.log("2" + 1 + 3) //this gave a different result to fix this use () to sp
 
 //++i first increment then use
 //i++ first use then increment
+
+
