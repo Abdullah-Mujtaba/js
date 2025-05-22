@@ -82,6 +82,29 @@ function userDetails(anyObject) //in js we dont have to specifically tell the fu
 
 }
 
-console.log(userDetails(1))
+// console.log(userDetails(1))
 
 // console.log(user.isObject())
+
+function fetchElement(anyArray, number) // this is how we pass an array in js to a function 
+{
+    return anyArray[number]
+}
+
+myarray = [10,20,30,40,50]
+
+console.log(fetchElement(myarray,1))
+
+
+
+function getUser()  //how to return multiple values, there is another way that we can return an array 
+{
+  return {
+    name: "Ahmed",
+    age: 25
+  };
+}
+
+const user1 = getUser();
+console.log(user1.name); // "Ahmed"
+console.log(user1.age);  // 25
