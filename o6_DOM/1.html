@@ -4,10 +4,67 @@
     <meta charset="UTF-8">
 
     <title>DOM</title>
+
+    <style>
+        .bg-black{
+            background-color: grey;
+            color: white;
+        }
+    </style>
+
 </head>
-<body>
-    <div>
-        <h1>DOM learning thru this repo</h1>
+<body class="bg-black">
+    <div >
+        <h1 id="heading1" class="heading">DOM learning thru this repo <span style="display: none;">test text</span></h1>
+        <p>Lorem ipsum dolor sit amet.</p>
+
+
+
+        <!-- we can select objects in dom on the basis of id and on the basis of class(note write getElementByClassName for that) -->
+
+        <!-- both have differences
+         h1.innerText wont show the span because it dispaly is set to none
+         but h1.textContent will show it -->
+         <!-- h1.innerHTML will show the whole HTML text along with the tags that have been written  -->
+    
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <h2>Lorem ipsum dolor, sit amet consectetur adipisicing.</h2>  
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+
+        <!-- querySelector('h2') will give the first heading/first tag that exists in our HTML page
+        querySelectorAll('h2') will give all the h2 tags that exist within our html page -->
+
+        <!-- querySelector(#id) selects based on id
+         querySelector(.class) selects based on class -->
+
+         <input type="password" name="" id="">
+
+        <ul>
+            <li class = "list-item">one</li>
+            <li class = "list-item">two</li>
+            <li class = "list-item">three</li>
+        </ul>
+
+        <!-- const myList = document.querySelector('ul') -->
+        <!-- myList.querySelector('li').style.color="black" -->
+         <!-- myList.querySelector('li').innerText = 'five' --> 
+          <!-- to chaneg the value of the first element of the unorderde list -->
+
+        <!-- nodeList.forEach(function(item){item.innerText = "two"})
+        we can run a loop on nodelist as defiend by the prototype what it does is sets all the elements of the list to two -->
+
+        
+        <!-- myList = document.querySelectorAll('li')
+        NodeList(3) [li.list-item, li.list-item, li.list-item]
+        myList = document.getElementsByClassName('list-item')
+        HTMLCollection(3) [li.list-item, li.list-item, li.list-item]
+        myList = Array.from(myList)
+        (3) [li.list-item, li.list-item, li.list-item]0: li.list-item1: li.list-item2: li.list-itemlength: 3[[Prototype]]: Array(0)at: ƒ at()concat: ƒ concat()constructor: ƒ Array()copyWithin: ƒ copyWithin()entries: ƒ entries()every: ƒ every()fill: ƒ fill()filter: ƒ filter()find: ƒ find()findIndex: ƒ findIndex()findLast: ƒ findLast()findLastIndex: ƒ findLastIndex()flat: ƒ flat()flatMap: ƒ flatMap()forEach: ƒ forEach()includes: ƒ includes()indexOf: ƒ indexOf()join: ƒ join()keys: ƒ keys()lastIndexOf: ƒ lastIndexOf()length: 0map: ƒ map()pop: ƒ pop()push: ƒ push()reduce: ƒ reduce()reduceRight: ƒ reduceRight()reverse: ƒ reverse()shift: ƒ shift()slice: ƒ slice()some: ƒ some()sort: ƒ sort()splice: ƒ splice()toLocaleString: ƒ toLocaleString()toReversed: ƒ toReversed()toSorted: ƒ toSorted()toSpliced: ƒ toSpliced()toString: ƒ toString()unshift: ƒ unshift()values: ƒ values()with: ƒ with()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.unscopables): {at: true, copyWithin: true, entries: true, fill: true, find: true, …}[[Prototype]]: Object
+        myList.forEach(function(item) {
+            item.style.color ="green"
+        }) -->
+
+
     </div>
 </body>
-</html>
+</html> 
