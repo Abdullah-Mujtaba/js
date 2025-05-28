@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit and remove (DOM) </title>
+</head>
+<body style="background-color: black; color: white;">
+    <!-- ul.language will make an unordered list with class language -->
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+
+<script>
+    function addLanguage(langname)
+    {
+        const newItem = document.createElement("li"); //creating a new list item
+        newItem.innerText = langname; //.innertext sets the text content of the new item
+        document.querySelector(".language").append(newItem); //appending the new item to the list
+    }   
+
+    function OptiLanguage(langname)
+    {
+        const newItem = document.createElement("li");
+        li.append(document.createTextNode(langname)); //creating a text node and appending it to the new item
+        document.querySelector(".language").append(newItem); //appending the new item to the list
+
+        //this is more optimized than the previous method
+        //because it creates the text node only once and appends it to the new item
+        //instead of creating a new text node every time
+        //this is useful when you want to add multiple items at once
+        //for example, if you want to add multiple languages at once
+        //you can create a text node once and append it to the new item
+
+    }
+
+
+
+    addLanguage("Python");
+    addLanguage("Java");
+
+    //note that here the first querySelector returned ul 
+    //nitem when we do querySelectorAll returns a NodeList
+    //ul ke ander aik nodelst hai
+    const item = document.querySelector(".language")
+    nitem = item.querySelectorAll("li");
+    console.log(nitem);
+    newItem = document.createElement("li");
+    newItem.innerText = "C++";
+    nitem[2].replaceWith(newItem); //replacing the third item with the new item
+    //this will replace the third item in the list with the new item
+
+    //document.querySelector("li:nth-child()") //returns the nth child of the parent element pass in the index that we want
+    const firstLang = document.querySelector("li:first-child"); // returns the first li element in the list
+    firstLang.outerHTML = "<li>TypeScript</li>"; //replacing the first item with a new item
+
+    const lastLang = document.querySelector("li:last-child");
+    lastLang.remove(); //removes the last item from the list
+
+    const midLang = document.querySelector("li:nth-child(1)"); //returns the second item in the list
+    midLang.remove(); //removes the second item from the list   
+
+</script>
+
+</html>
