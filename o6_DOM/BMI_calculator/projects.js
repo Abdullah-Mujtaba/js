@@ -14,7 +14,20 @@ form.addEventListener('submit', function (event) {
   if (isNaN(height) || isNaN(weight)) {
     console.log('Please enter values');
   } else {
-    const sum = (weight / (height * height)).toFixed(2);
-    document.querySelector('#results').innerHTML = sum;
+    const sum = weight / (height * height).toFixed(2);
+    if (sum < 18.6) {
+      console.log('You are under weight');
+      document.querySelector(
+        '#results'
+      ).innerHTML = `<span>${sum} </br> You are under weight<\span>`;
+    } else if (sum > 18.6 && sum < 24.9) {
+      document.querySelector(
+        '#results'
+      ).innerHTML = `<span>${sum} </br> Your bmi is normal<\span>`;
+    } else {
+      document.querySelector(
+        '#results'
+      ).innerHTML = `<span>${sum} </br> You are overweight<\span>`;
+    }
   }
 });
