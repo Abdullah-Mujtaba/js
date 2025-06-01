@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hi this is async project</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    //what this function does is that it will run the code inside it after 2 seconds
+    setTimeout(function()
+    {
+        console.log("hi this is a message after 2 seconds");
+    },2000)
+
+    //another way of doing the same thing is 
+    const sayHi = ()=>{console.log("hello world")}
+    setTimeout(sayHi,2000); // the difference is that we passed a handler not a function
+
+    const changeText = ()=>
+    {
+        document.querySelector("h1").innerHTML = "this is a new text";
+    }
+
+    const changeH1 = setTimeout(changeText,3000); //now the text will change after 3 seconds 
+
+    document.querySelector("#stop").addEventListener("click",function(event)
+    {
+        clearTimeout(changeH1); //this will stop the timeout from running, but it will not stop the function from running
+    })
+
+</script>
+
+
+</html>

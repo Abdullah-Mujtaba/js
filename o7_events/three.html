@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hi this is three.html</h1>
+    <button id="stop">Stop</button>
+    <button id="start">Start</button>
+</body>
+<script>
+    const sayHi = (str)=>
+    {
+        let date = new Date();
+        console.log(str,date.toLocaleTimeString());
+    }
+    
+    let hiInterv;
+    
+    document.querySelector("#start").addEventListener("click",function(event)
+    {
+        hiInterv = setInterval(sayHi,2000,"Hello World");
+        console.log("Interval started");
+    })
+
+    document.querySelector("#stop").addEventListener("click",function(event)
+    {
+        clearInterval(hiInterv);
+        console.log("Interval stopped");
+         
+        
+    })
+
+</script>
+
+
+</html>
