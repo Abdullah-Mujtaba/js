@@ -68,10 +68,12 @@
         {
             event.stopPropagation(); //this will stop the event from bubbling up to the parent elements
             console.log(`You clicked on the image with id: ${event.target.id}`);
-            const index = array.indexOf(event.target);
-            array.splice(index, 1); //remove the clicked image from the array
-            event.target.remove(); //remove the clicked image from the DOM
-            console.log(array)
+            //const index = array.indexOf(event.target);
+            //array.splice(index, 1); //remove the clicked image from the array
+            //event.target.remove(); //remove the clicked image from the DOM
+            //console.log(array)
+            event.target.parentNode.remove(); //this will remove the parent element of the clicked image from the DOM
+            //removes the li as well the issue with that I was doing was that the child (image) was being removed but the parent (li) was not being removed
         })
     })
     //this is how we can remove an element from the DOM using the event object
