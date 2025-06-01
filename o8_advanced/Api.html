@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+</head>
+<body style="background-color: black; color: white; font-size: 30px">
+    https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
+    Value	State	Description
+    0	UNSENT	Client has been created. open() not called yet.
+    1	OPENED	open() has been called.
+    2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+    3	LOADING	Downloading; responseText holds partial data.
+    4	DONE	The operation is complete.
+    
+</body>
+<script>
+    const req = new XMLHttpRequest();
+    req.open('GET','https://randomuser.me/api/') 
+    req.onreadystatechange = function()
+    {
+        console.log(req.readyState); // this will log the state of the request
+        if(req.readyState == 4)
+        {
+            const result = JSON.parse(this.responseText); // this will log the response of the request
+            //and by default the response is a string so we need to parse it to an object
+            //we did by converting it to a JSON object
+            console.log(result);    
+            console.log(typeof result)
+            console.log(result.results[0].name.first)
+            //this is how we can access the data from the response
+            
+        }
+    }
+    req.send();
+</script>
+</html>
