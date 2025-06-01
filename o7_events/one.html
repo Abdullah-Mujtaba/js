@@ -28,6 +28,57 @@
         //alert("You clicked on the owl image!");
         console.log(event)
         console.log(event.timeStamp) //prints the time when the event was triggered
-    });
+    },false); //true for capturing, false for bubbling
+
+    //sometimes we need to pass false or true>
+    //look at type, timestamp, defaultPrevented,  target, toElement, srcElement, currentTarget
+    //clientX, clientY, screenX,screenY
+    //altkey, ctrlKey, shiftKey, keyCode
+
+    
+    //event propogation
+    //event bubbling and event capturing, event bubbling is the default behaviour goes from child to parent and event capturing is 
+    //from parent to child
+
+    document.getElementById("images").addEventListener("click", function(event)
+    {
+        console.log("You clicked on the images list!");
+    }, false); //true for capturing, false for bubbling
+    //right now we are targeting capturing what happens is that the parent(images run) and then the child(owl) runs
+    //if we change the third parameter to false, then the child runs first and then the parent runs
+
+    document.getElementById("google").addEventListener("click", function(event)
+    {
+        event.preventDefault(); //this will prevent the default action of the link, which is to navigate to the link
+        console.log("You clicked on the Google link!");
+        event.stopPropagation(); //this will stop the event from bubbling up to the parent elements
+        //preventDefault() is used to prevent the default action of the event, eg stopping a form before it is submittied
+        //preventing a redirection to a url
+        //event.stopPropagation(); //this will stop the event from bubbling up to the parent elements
+        //stopPropagation() is used to stop the event from bubbling up to the parent elements, it will not prevent the default action
+
+    })
+
+    let images = document.querySelectorAll("img");
+    console.log(images);
+    let array = Array.from(images); //convert the NodeList to an array
+    images.forEach(function(image)
+    {
+        image.addEventListener("click",function(event)
+        {
+            event.stopPropagation(); //this will stop the event from bubbling up to the parent elements
+            console.log(`You clicked on the image with id: ${event.target.id}`);
+            const index = array.indexOf(event.target);
+            array.splice(index, 1); //remove the clicked image from the array
+            event.target.remove(); //remove the clicked image from the DOM
+            console.log(array)
+        })
+    })
+    //this is how we can remove an element from the DOM using the event object
+    //using event.target.remove() removes the target element from the DOM
+    //here we used click so wherever we clicked on the image that became the target
+    //and then calling event.target.remove() removes the target element from the DOM
+
+
 </script>
 </html>
