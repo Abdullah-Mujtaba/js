@@ -71,8 +71,15 @@
             //const index = array.indexOf(event.target);
             //array.splice(index, 1); //remove the clicked image from the array
             //event.target.remove(); //remove the clicked image from the DOM
+            
             //console.log(array)
-            event.target.parentNode.remove(); //this will remove the parent element of the clicked image from the DOM
+            if(event.target.tagName === "IMG") //check if the target is an image
+            {
+                event.target.parentNode.remove();     //the issue was that google was an li element so when we clicked on that
+                //we got ul as the parent element and then the parent element was being removed
+                //which resulted in everything being removed    
+            }
+            //this will remove the parent element of the clicked image from the DOM
             //removes the li as well the issue with that I was doing was that the child (image) was being removed but the parent (li) was not being removed
         })
     })
